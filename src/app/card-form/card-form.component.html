@@ -1,1 +1,8 @@
-<p>card-form works!</p>
+<form [formGroup] = "cardForm">
+    <input formControlName="name" />
+</form>
+
+<!-- for debugging -->
+
+<div>{{ cardForm.value | json }}</div>
+<div>{{ cardForm.valid }}</div>
