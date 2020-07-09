@@ -16,5 +16,8 @@
         <div class="help is-danger" *ngIf="control.errors.maxlength">
             can not be more than {{ control.errors.maxlength.requiredLength}} characters.
         </div>
+        <div class="help is-danger" *ngIf="control.errors.pattern">
+            Invalid format
+        </div>
     </ng-container>
 </div>
