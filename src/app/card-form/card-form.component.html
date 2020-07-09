@@ -1,8 +1,20 @@
 <form [formGroup] = "cardForm">
     <input formControlName="name" />
+    <ng-container *ngIf="cardForm.controls.name.errors">
+        <div *ngIf="cardForm.controls.name.errors.required">
+            Value is required
+        </div>
+        <div *ngIf="cardForm.controls.name.errors.minlength">
+            Value must be {{ cardForm.controls.name.errors.minlength.requiredLength}} characters long
+        </div>
+    </ng-container>
 </form>
 
 <!-- for debugging -->
 
 <div>{{ cardForm.value | json }}</div>
 <div>{{ cardForm.valid }}</div>
+
+<!-- behind scene error name for validators -->
+
+<div>{{ cardForm.get('name').errors | json }}</div>
