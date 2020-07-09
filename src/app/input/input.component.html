@@ -1,11 +1,14 @@
 <input [formControl]="control" />
-<!-- <ng-container *ngIf="cardForm.controls.name.dirty && 
-                    cardForm.controls.name.touched && 
-                    cardForm.controls.name.errors">
-    <div *ngIf="cardForm.controls.name.errors.required">
+<ng-container *ngIf="control.dirty && 
+                    control.touched && 
+                    control.errors">
+    <div *ngIf="control.errors.required">
         Value is required
     </div>
-    <div *ngIf="cardForm.controls.name.errors.minlength">
-        Value must be {{ cardForm.controls.name.errors.minlength.requiredLength}} characters long
+    <div *ngIf="control.errors.minlength">
+        Value must be {{ control.errors.minlength.requiredLength}} characters long
     </div>
-</ng-container> -->
+    <div *ngIf="control.errors.maxlength">
+        can not be more than {{ control.errors.maxlength.requiredLength}} characters.
+    </div>
+</ng-container>
