@@ -1,3 +1,10 @@
+<div class="columns">
+<div class="column">
+    <app-card [name]="cardForm.get('name').value"
+    [expiration]="cardForm.get('expiration').value"
+    [cardNumber]="cardForm.get('cardNumber').value"></app-card>
+</div>
+<div class="column"></div>
 <form [formGroup] = "cardForm" (ngSubmit)="onSubmit()">
     <app-input label="Name" [control]="cardForm.controls.name" ></app-input>
     <app-input label="Card Number" [control]="cardForm.controls.cardNumber" ></app-input>
@@ -15,12 +22,4 @@
     </div>
 
 </form>
-<hr/>
-<!-- for debugging -->
-
-<div>{{ cardForm.value | json }}</div>
-<div>{{ cardForm.valid }}</div>
-
-<!-- behind scene error name for validators -->
-
-<div>{{ cardForm.get('name').errors | json }}</div>
+</div>
