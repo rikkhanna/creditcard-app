@@ -17,12 +17,13 @@ export class CardFormComponent implements OnInit {
     securityCode: new FormControl('')
 
   });
-  
-
+  onSubmit(){
+    console.log("Form was submitted");
+  }
   constructor() {
     console.log(this.cardForm.controls.name);
    }
-
+  
   ngOnInit(): void {
   }
 
